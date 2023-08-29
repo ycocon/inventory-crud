@@ -6,9 +6,4 @@ export default defineConfig({
   base: "/inventory-crud/",
   publicPath: "/inventory-crud/",
   plugins: [react()],
-  server: {
-    proxy: {
-      "/api": "https://inventory-crud-backend.onrender.com",
-    },
-  },
 });

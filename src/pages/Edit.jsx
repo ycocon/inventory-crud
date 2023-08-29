@@ -22,13 +22,16 @@ const Edit = () => {
 
     const product = { name, unit, price, expiry, inventory };
 
-    const response = await fetch("/api/products/" + Product._id, {
-      method: "PATCH",
-      body: JSON.stringify(product),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://inventory-crud-backend.onrender.com/api/products/" + Product._id,
+      {
+        method: "PATCH",
+        body: JSON.stringify(product),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

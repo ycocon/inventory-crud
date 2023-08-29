@@ -10,9 +10,12 @@ const Home = () => {
   const { products, dispatch } = useProductsContext();
 
   const handleClick = async (id) => {
-    const response = await fetch("/api/products/" + id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://inventory-crud-backend.onrender.com/api/products/" + id,
+      {
+        method: "DELETE",
+      }
+    );
     const json = await response.json();
 
     if (response.ok) {
@@ -22,7 +25,9 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("/api/products");
+      const response = await fetch(
+        "https://inventory-crud-backend.onrender.com/api/products"
+      );
       const json = await response.json();
 
       if (response.ok) {

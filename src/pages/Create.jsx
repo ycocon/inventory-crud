@@ -28,10 +28,13 @@ const Create = () => {
     formData.append("inventory", inventory);
     formData.append("image", image);
 
-    const response = await fetch("/api/products", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://inventory-crud-backend.onrender.com/api/products",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {
