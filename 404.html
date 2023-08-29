@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Not Found</title>
+  </head>
+  <body>
+    <script>
+      const url = new URL(window.location);
+      if (url.pathname.startsWith("/inventory-crud/")) {
+        window.location.replace("/inventory-crud/index.html");
+      }
+    </script>
+  </body>
+</html>
